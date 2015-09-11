@@ -1,0 +1,1 @@
+# kontena-local-auth
