@@ -13,7 +13,7 @@ The passwords are hashed using BCrypt algorithm which is pretty secure by nature
 
 # Running the auth api
 
-Naturally this should be run with Docker. 
+Naturally this should be run with Docker.
 
 ```
 docker run -d -p 3000:3000 jnummelin/kontena-auth
@@ -21,7 +21,7 @@ docker run -d -p 3000:3000 jnummelin/kontena-auth
 
 ## Running in prod
 
-TODO: 
+TODO:
 - Describe volume setup for the DB file
 - Describe easy SSL setup for HAProxy etc.
 
@@ -41,4 +41,11 @@ For local testing with Kontena master there's ready made docker-compose.yml that
 To setup your own Kontena master to use this auth API as backend use following env variable for the master:
 ```
 AUTH_API_URL=http://authapi.somehost.io:5000
+```
+
+# Backing up
+
+Make sure you take backups of your user data. The auth service uses Sqlite database to store data. By default the user database is store at `/data/users.db`. The path `/data` is declared as volume so docker will store it outside of the container layer. In order to take backups you can mount that same volume in another container and send the data somewhere safe. Something like this:
+```
+docker run --rm --volumes-from kontena-local-auth ubuntu ./send_to_s3.sh /data/users.db
 ```

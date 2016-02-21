@@ -24,3 +24,7 @@ EXPOSE 5000
 WORKDIR /app
 
 CMD ["./run.sh"]
+
+# Make sure the user sqlite dv file is on volume so that it can be easily backed up
+ENV DB_PATH=/data/users.db
+VOLUME ["/data"]
