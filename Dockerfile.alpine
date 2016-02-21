@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:edge
+FROM alpine:3.3
 MAINTAINER jussi.nummelin@gmail.com
 
 RUN apk update && apk --update add ruby ruby-dev ruby-rdoc sqlite-dev ca-certificates libssl1.0 openssl libstdc++
@@ -18,3 +18,7 @@ ADD . /app
 ENV PORT 3000
 
 CMD ["./run.sh"]
+
+# Make sure the user sqlite dv file is on volume so that it can be easily backed up
+ENV DB_PATH=/data/users.db
+VOLUME ["/data"]
