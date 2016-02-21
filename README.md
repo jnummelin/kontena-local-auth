@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jnummelin/kontena-local-auth.svg?branch=master)](https://travis-ci.org/jnummelin/kontena-local-auth)
+
 # kontena-local-auth
 
 This project provides local self-contained authentication backend for Kontena.
@@ -29,7 +31,7 @@ TODO:
 
 Tests are implemented using rspec and ca be run by issuing:
 ```
-rsec spec/
+rspec spec/
 ```
 
 # Testing with Kontena master
