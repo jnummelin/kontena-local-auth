@@ -1,5 +1,12 @@
 [![Build Status](https://travis-ci.org/jnummelin/kontena-local-auth.svg?branch=master)](https://travis-ci.org/jnummelin/kontena-local-auth)
 
+
+# Deprecated
+
+Kontena swithced in 0.16 release to oauth2 authentication and thus this repo is now only compliant with Kontena < 0.16.
+
+See Kontena auth documentation at: https://www.kontena.io/docs/using-kontena/authentication
+
 # kontena-local-auth
 
 This project provides local self-contained authentication backend for Kontena.
